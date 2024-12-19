@@ -23,7 +23,7 @@
         href="https://hochfrequenz.de">Hochfrequenz</a
       >
       |
-      <span class="ml-2">den Fristenkalender</span>
+      <span class="ml-2">unseren Fristenkalender</span>
       <a
         class="font-bold underline mx-1"
         target="_blank"

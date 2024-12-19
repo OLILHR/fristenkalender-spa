@@ -4,12 +4,12 @@
 
 <div class="flex items-center gap-4">
   <button
-    class="flex items-center gap-2 rounded-full bg-secondary text-[16px] py-3 px-5 text-tint"
+    class="flex items-center gap-2 rounded-full bg-tint text-[16px] py-3 px-5 text-secondary"
   >
     Abmelden <IconLogout />
   </button>
   <button
-    class="flex items-center gap-2 rounded-full bg-secondary text-[16px] py-3 px-5 text-tint"
+    class="flex items-center gap-2 rounded-full bg-tint text-[16px] py-3 px-5 text-secondary"
   >
     Anmelden <IconLogin />
   </button>
