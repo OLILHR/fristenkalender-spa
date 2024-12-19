@@ -6,7 +6,11 @@
 
 <div class="relative">
   <div class="absolute top-4 right-4 z-10">
-    <AuthButton background="bg-secondary" textColor="text-tint" />
+    <AuthButton
+      background="bg-secondary"
+      textColor="text-tint"
+      userEmailTextColor="text-secondary"
+    />
   </div>
 </div>
 
