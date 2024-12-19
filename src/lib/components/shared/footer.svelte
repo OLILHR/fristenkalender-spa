@@ -2,7 +2,7 @@
   import { base } from "$app/paths";
   import { IconHeart, IconLogo } from "$lib/components";
 
-  export let background = "bg-primary";
+  export let background = "bg-secondary";
 
   let currentYear = new Date().getFullYear();
 </script>
