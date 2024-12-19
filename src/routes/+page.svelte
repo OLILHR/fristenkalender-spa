@@ -31,10 +31,10 @@
       Fristen im Blick und Zukunft im Griff
     </h2>
     <h3>
-      Das Projekt digitaler Fristenkalender bringt den bewährten
-      Hochfrequenz-Fristenkalender vom Wand-Format in Ihre Kalender-App. So
-      können alle offiziellen Fristen aus unter anderem GPKE und MaBiS in
-      beliebe Kalender-Apps importiert und dort als Ereignisse angezeigt werden.
+      Der digitale Fristenkalender bringt den bewährten
+      Hochfrequenz-Fristenkalender vom Wandformat direkt in Ihre Kalender-App.
+      So können alle offiziellen Fristen, beispielsweise der GPKE und MaBiS, in
+      Ihre Kalender importiert und dort als Ereignisse angezeigt werden.
     </h3>
     <div class="mt-10 flex justify-center">
       <button
