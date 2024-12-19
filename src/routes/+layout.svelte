@@ -1,5 +1,6 @@
 <script lang="ts">
   import "$src/app.scss";
+
   import { Footer } from "$lib/components";
 </script>
 
