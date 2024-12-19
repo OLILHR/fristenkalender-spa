@@ -1,12 +1,19 @@
-<!-- 
- remember to add the base path when referencing to other endpoints:
-import { base } from "$app/paths";
-for instance: href="{base}/<route>" 
--->
 <script lang="ts">
   import "$src/app.scss";
 
+  import { goto } from "$app/navigation";
+  import { base } from "$app/paths";
   import { AuthButton, IconSquareArrow } from "$lib/components";
+  import auth from "$src/auth/authService";
+  import { isAuthenticated } from "$src/store";
+
+  async function checkAuthentication() {
+    if ($isAuthenticated) {
+      goto(`${base}/fristenkalender`);
+    } else {
+      await auth.loginWithRedirect();
+    }
+  }
 </script>
 
 <div class="relative">
@@ -31,6 +38,7 @@ for instance: href="{base}/<route>"
     </h3>
     <div class="mt-10 flex justify-center">
       <button
+        on:click={checkAuthentication}
         class="flex flex-row items-center gap-2 rounded-full bg-secondary text-white px-5 py-2 shadow-md no-underline transition-transform duration-300 ease-in-out hover:scale-110"
       >
         <IconSquareArrow /> Jetzt öffnen

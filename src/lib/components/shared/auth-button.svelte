@@ -7,6 +7,7 @@
 
   export let background = "bg-tint";
   export let textColor = "text-secondary";
+  export let userEmailTextColor = "text-tint";
 
   let userEmail: string = "";
 
@@ -39,7 +40,7 @@
 
 <div class="flex items-center gap-4">
   {#if $isAuthenticated && userEmail}
-    <span class="text-[16px] text-white">{userEmail}</span>
+    <span class="text-[16px] {userEmailTextColor}">{userEmail}</span>
   {/if}
   {#if $isAuthenticated}
     <button
