@@ -8,6 +8,7 @@ updates:
       prefix: "build(deps): "
     reviewers:
       - "OLILHR"
+      - "@Hochfrequenz/frontend-developers-review-team"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -16,3 +17,4 @@ updates:
       prefix: "build(deps): "
     reviewers:
       - "OLILHR"
+      - "@Hochfrequenz/frontend-developers-review-team"

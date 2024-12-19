@@ -1,9 +1,9 @@
 # FRISTENKALENDER SPA
 
-![Build status badge](https://github.com/OLILHR/fristenkalender-spa/workflows/Building/badge.svg)
-![Eslint status badge](https://github.com/OLILHR/fristenkalender-spa/workflows/Linting/badge.svg)
-![Prettier status badge](https://github.com/OLILHR/fristenkalender-spa/workflows/Formatting/badge.svg)
-![PlayWright status badge](https://github.com/OLILHR/fristenkalender-spa/workflows/E2E-Testing/badge.svg)
+![Build status badge](https://github.com/Hochfrequenz/fristenkalender-spa/workflows/Building/badge.svg)
+![Eslint status badge](https://github.com/Hochfrequenz/fristenkalender-spa/workflows/Linting/badge.svg)
+![Prettier status badge](https://github.com/Hochfrequenz/fristenkalender-spa/workflows/Formatting/badge.svg)
+![PlayWright status badge](https://github.com/Hochfrequenz/fristenkalender-spa/workflows/E2E-Testing/badge.svg)
 
 ### ⚙️ Setting up development environment
 
