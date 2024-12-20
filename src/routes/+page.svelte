@@ -43,13 +43,15 @@
     after:shadow-[inset_0_-2px_4px_rgba(0,0,0,0.1)]
     after:pointer-events-none"
   >
-    <h1 class="text-3xl text-center pb-5">Digitaler Fristenkalender</h1>
+    <h1 class="text-3xl text-black/70 text-center pb-5">
+      Digitaler Fristenkalender
+    </h1>
     <h2
-      class="flex justify-center text-lg border-b border-secondary pb-3 mb-5 uppercase"
+      class="flex justify-center text-lg border-b border-secondary text-black/70 pb-3 mb-5 uppercase"
     >
       Fristen im Blick und Zukunft im Griff
     </h2>
-    <h3>
+    <h3 class="text-black/70">
       Der digitale Fristenkalender bringt den bewährten
       Hochfrequenz-Fristenkalender vom Wandformat direkt in Ihre Kalender-App.
       So können alle offiziellen Fristen, beispielsweise der GPKE und MaBiS, in

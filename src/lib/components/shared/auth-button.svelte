@@ -6,8 +6,8 @@
   import { isAuthenticated, user } from "$src/store";
 
   export let background = "bg-tint";
-  export let textColor = "text-black";
-  export let userEmailTextColor = "text-black";
+  export let textColor = "text-black/70";
+  export let userEmailTextColor = "text-black/70";
 
   let userEmail: string = "";
 

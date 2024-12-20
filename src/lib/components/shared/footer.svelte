@@ -14,7 +14,7 @@
   </div>
 
   <div class="flex-1 flex justify-center">
-    <div class="flex items-center text-sm text-black space-x-1 text-center">
+    <div class="flex items-center text-sm text-black/70 space-x-1 text-center">
       <p class="flex items-center flex-wrap justify-center">
         © {currentYear} - made with
         <IconHeart />

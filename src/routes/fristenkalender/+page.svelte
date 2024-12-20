@@ -63,7 +63,7 @@
       selectedMonth = reverseMonthNameMap[urlMonth];
     }
 
-    const urlType = queryParams.get("netzzugangsthema");
+    const urlType = queryParams.get("netzzugangsthemen");
     if (urlType && reverseTypeNameMap[urlType]) {
       selectedType = reverseTypeNameMap[urlType];
     }
@@ -75,7 +75,7 @@
       const params = new URLSearchParams();
       params.set("jahr", selectedYear.toString());
       params.set("monat", monthNameMap[selectedMonth]);
-      params.set("netzzugangsthema", typeNameMap[selectedType]);
+      params.set("netzzugangsthemen", typeNameMap[selectedType]);
 
       goto(`${base}/fristenkalender/?${params.toString()}`, {
         replaceState: true,
@@ -87,13 +87,13 @@
 <div class="flex flex-col h-full bg-tint">
   <Header bind:selectedYear bind:selectedMonth bind:selectedType />
   <div class="flex flex-col px-20 py-12">
-    <h1 class="text-2xl font-medium">
+    <h1 class="text-2xl font-medium text-black/70">
       Fristenkalender {monthNameMap[selectedMonth].charAt(0).toUpperCase() +
         monthNameMap[selectedMonth].slice(1)}
       {selectedYear}
     </h1>
-    <h2 class="text-xl text-black/60">
-      Netzzugangsthema: {typeNames.find((t) => t.value === selectedType)
+    <h2 class="text-xl text-black/70">
+      Netzzugangsthemen: {typeNames.find((t) => t.value === selectedType)
         ?.label || "alle"}
     </h2>
   </div>

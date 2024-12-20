@@ -170,7 +170,7 @@
         </thead>
         <tbody>
           {#each entries as entry}
-            <tr class="font-medium border-b border-secondary/40">
+            <tr class="font-medium border-b border-secondary/40 text-black/70">
               <td class="py-4 whitespace-nowrap">{entry.date}</td>
               <td class="py-4 whitespace-nowrap"
                 >{formatWorkday(entry.workday)}</td

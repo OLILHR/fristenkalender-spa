@@ -32,8 +32,8 @@
   <div class="flex-none py-2 pr-1">
     <AuthButton
       background="bg-tint"
-      textColor="text-black"
-      userEmailTextColor="text-black"
+      textColor="text-black/70"
+      userEmailTextColor="text-black/70"
     />
   </div>
 </header>
