@@ -22,7 +22,9 @@
       </a>
     </div>
 
-    <div class="flex gap-4 ml-4">
+    <span class="text-3xl"> Digitaler Fristenkalender </span>
+
+    <div class="flex gap-4 ml-4 pb-1">
       <CalendarYearSelect bind:selectedYear />
       <CalendarMonthSelect bind:selectedMonth />
       <CalendarTypeSelect bind:selectedType />
