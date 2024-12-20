@@ -1,5 +1,4 @@
 export type MonthValue =
-  | "00"
   | "01"
   | "02"
   | "03"
@@ -11,5 +10,4 @@ export type MonthValue =
   | "09"
   | "10"
   | "11"
-  | "12"
-  | "13";
+  | "12";

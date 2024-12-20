@@ -25,6 +25,11 @@
   let entries: CalendarEntry[] = [];
   let isLoading = false;
 
+  // split <number> and <string> ("WT"/"LWT")
+  function formatWorkday(workday: string): string {
+    return workday.replace(/(\d+)([a-zA-Z]+)/g, "$1 $2");
+  }
+
   async function fetchData(): Promise<CacheData> {
     const cacheKey = `${selectedYear}-${selectedType}`;
 
@@ -146,20 +151,31 @@
     <span> Keine Fristen für den ausgewählten Zeitraum gefunden. </span>
   {:else}
     <div class="overflow-auto flex-1 min-h-0">
-      <table class="w-full text-left text-gray-800">
-        <thead class="bg-gray-50 text-xs uppercase sticky top-0 z-10">
-          <tr>
-            <th class="px-6 py-3">Datum</th>
-            <th class="px-6 py-3">Werktag</th>
-            <th class="px-6 py-3">Beschreibung</th>
+      <table class="w-full text-left">
+        <thead class="text-sm bg-tint uppercase sticky top-0 z-10">
+          <tr class="text-black/50">
+            <th
+              class="pb-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
+              >Datum</th
+            >
+            <th
+              class="pb-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
+              >Werktag</th
+            >
+            <th
+              class="pb-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
+              >Beschreibung</th
+            >
           </tr>
         </thead>
         <tbody>
           {#each entries as entry}
-            <tr class="bg-white border-b">
-              <td class="px-6 py-4 whitespace-nowrap">{entry.date}</td>
-              <td class="px-6 py-4 whitespace-nowrap">{entry.workday}</td>
-              <td class="px-6 py-4">{@html entry.description}</td>
+            <tr class="font-medium border-b border-secondary/40 text-black/70">
+              <td class="py-4 whitespace-nowrap">{entry.date}</td>
+              <td class="py-4 whitespace-nowrap"
+                >{formatWorkday(entry.workday)}</td
+              >
+              <td class="py-4">{@html entry.description}</td>
             </tr>
           {/each}
         </tbody>

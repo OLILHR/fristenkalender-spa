@@ -4,14 +4,11 @@
   import { goto } from "$app/navigation";
   import { base } from "$app/paths";
   import { page } from "$app/stores";
-  import {
-    CalendarMonthSelect,
-    CalendarTypeSelect,
-    CalendarYearInput,
-  } from "$lib/components";
+  import { Header } from "$lib/components";
   import CalendarTable from "$lib/components/features/calendar-table.svelte";
   import type { MonthValue } from "$lib/types/calendar-month";
   import type { TypeValue } from "$lib/types/calendar-type";
+  import { typeNames } from "$lib/types/calendar-type";
 
   // default placeholders on inital page access (current year/month + "alle Netzzugangsthemen")
   let selectedYear = new Date().getFullYear();
@@ -21,7 +18,6 @@
   let selectedType: TypeValue = "ALL";
 
   const monthNameMap: Record<MonthValue, string> = {
-    "00": "dezember-1",
     "01": "januar",
     "02": "februar",
     "03": "maerz",
@@ -34,7 +30,6 @@
     "10": "oktober",
     "11": "november",
     "12": "dezember",
-    "13": "januar+1",
   };
 
   const reverseMonthNameMap: Record<string, MonthValue> = Object.fromEntries(
@@ -66,7 +61,7 @@
       selectedMonth = reverseMonthNameMap[urlMonth];
     }
 
-    const urlType = queryParams.get("netzzugangsthema");
+    const urlType = queryParams.get("netzzugangsthemen");
     if (urlType && reverseTypeNameMap[urlType]) {
       selectedType = reverseTypeNameMap[urlType];
     }
@@ -78,7 +73,7 @@
       const params = new URLSearchParams();
       params.set("jahr", selectedYear.toString());
       params.set("monat", monthNameMap[selectedMonth]);
-      params.set("netzzugangsthema", typeNameMap[selectedType]);
+      params.set("netzzugangsthemen", typeNameMap[selectedType]);
 
       goto(`${base}/fristenkalender/?${params.toString()}`, {
         replaceState: true,
@@ -87,16 +82,20 @@
   }
 </script>
 
-<div class="flex flex-col h-full">
-  <div class="flex-none p-5">
-    <div class="flex flex-wrap gap-4">
-      <CalendarYearInput bind:selectedYear />
-      <CalendarMonthSelect bind:selectedMonth />
-      <CalendarTypeSelect bind:selectedType />
-    </div>
+<div class="flex flex-col h-full bg-tint">
+  <Header bind:selectedYear bind:selectedMonth bind:selectedType />
+  <div class="flex flex-col px-24 py-12">
+    <h1 class="text-2xl font-medium text-black/70">
+      {monthNameMap[selectedMonth].charAt(0).toUpperCase() +
+        monthNameMap[selectedMonth].slice(1)}
+      {selectedYear}
+    </h1>
+    <h2 class="text-xl text-black/70">
+      Netzzugangsthemen: {typeNames.find((t) => t.value === selectedType)
+        ?.label || "alle"}
+    </h2>
   </div>
-
-  <div class="flex-1 min-h-0 px-5 pb-5">
+  <div class="flex-1 min-h-0 px-24 pb-1">
     <CalendarTable {selectedYear} {selectedMonth} {selectedType} />
   </div>
 </div>

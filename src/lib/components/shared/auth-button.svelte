@@ -6,8 +6,8 @@
   import { isAuthenticated, user } from "$src/store";
 
   export let background = "bg-tint";
-  export let textColor = "text-secondary";
-  export let userEmailTextColor = "text-tint";
+  export let textColor = "text-black/70";
+  export let userEmailTextColor = "text-black/70";
 
   let userEmail: string = "";
 
@@ -45,14 +45,45 @@
   {#if $isAuthenticated}
     <button
       on:click={logout}
-      class="flex items-center gap-2 rounded-full {background} {textColor} text-[16px] py-3 px-5"
+      class="
+        flex
+        items-center
+        gap-2
+        rounded-full
+        {background} 
+        {textColor} 
+        text-[16px]
+        py-3
+        px-5
+        shadow-md
+        ring-1
+        ring-black/5
+        transition-all
+        duration-300
+        ease-in-out
+        hover:scale-105"
     >
       Abmelden <IconLogout />
     </button>
   {:else}
     <button
       on:click={login}
-      class="flex items-center gap-2 rounded-full {background} {textColor} text-[16px] py-3 px-5"
+      class="
+        flex
+        items-center
+        gap-2 rounded-full
+        {background} 
+        {textColor} 
+        text-[16px]
+        py-3
+        px-5
+        shadow-md
+        ring-1
+        ring-black/5
+        transition-all
+        duration-300
+        ease-in-out
+        hover:scale-105"
     >
       Anmelden <IconLogin />
     </button>
