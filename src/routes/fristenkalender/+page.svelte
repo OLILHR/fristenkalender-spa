@@ -87,12 +87,16 @@
   }
 </script>
 
-<div class="mx-5 my-5">
-  <div class="flex flex-wrap gap-4 mb-6">
-    <CalendarYearInput bind:selectedYear />
-    <CalendarMonthSelect bind:selectedMonth />
-    <CalendarTypeSelect bind:selectedType />
+<div class="flex flex-col h-full">
+  <div class="flex-none p-5">
+    <div class="flex flex-wrap gap-4">
+      <CalendarYearInput bind:selectedYear />
+      <CalendarMonthSelect bind:selectedMonth />
+      <CalendarTypeSelect bind:selectedType />
+    </div>
   </div>
 
-  <CalendarTable {selectedYear} {selectedMonth} {selectedType} />
+  <div class="flex-1 min-h-0 px-5 pb-5">
+    <CalendarTable {selectedYear} {selectedMonth} {selectedType} />
+  </div>
 </div>

@@ -137,7 +137,7 @@
   }
 </script>
 
-<div class="relative overflow-x-auto mt-4">
+<div class="h-full w-full relative flex flex-col overflow-hidden">
   {#if isLoading}
     <div class="flex justify-center items-center p-4">
       <span>Lade Fristenkalender ...</span>
@@ -145,23 +145,25 @@
   {:else if entries.length === 0}
     <span> Keine Fristen für den ausgewählten Zeitraum gefunden. </span>
   {:else}
-    <table class="w-full text-left text-gray-800">
-      <thead class="bg-gray-50 text-xs uppercase">
-        <tr>
-          <th class="px-6 py-3">Datum</th>
-          <th class="px-6 py-3">Werktag</th>
-          <th class="px-6 py-3">Beschreibung</th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each entries as entry}
-          <tr class="bg-white border-b">
-            <td class="px-6 py-4">{entry.date}</td>
-            <td class="px-6 py-4">{entry.workday}</td>
-            <td class="px-6 py-4">{@html entry.description}</td>
+    <div class="overflow-auto flex-1 min-h-0">
+      <table class="w-full text-left text-gray-800">
+        <thead class="bg-gray-50 text-xs uppercase sticky top-0 z-10">
+          <tr>
+            <th class="px-6 py-3">Datum</th>
+            <th class="px-6 py-3">Werktag</th>
+            <th class="px-6 py-3">Beschreibung</th>
           </tr>
-        {/each}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {#each entries as entry}
+            <tr class="bg-white border-b">
+              <td class="px-6 py-4 whitespace-nowrap">{entry.date}</td>
+              <td class="px-6 py-4 whitespace-nowrap">{entry.workday}</td>
+              <td class="px-6 py-4">{@html entry.description}</td>
+            </tr>
+          {/each}
+        </tbody>
+      </table>
+    </div>
   {/if}
 </div>
