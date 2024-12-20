@@ -9,15 +9,16 @@
     CalendarTypeSelect,
     CalendarYearInput,
   } from "$lib/components";
+  import CalendarTable from "$lib/components/features/calendar-table.svelte";
   import type { MonthValue } from "$lib/types/calendar-month";
   import type { TypeValue } from "$lib/types/calendar-type";
 
   // default placeholders on inital page access (current year/month + "alle Netzzugangsthemen")
-  let year = new Date().getFullYear();
-  let month: MonthValue = (new Date().getMonth() + 1)
+  let selectedYear = new Date().getFullYear();
+  let selectedMonth: MonthValue = (new Date().getMonth() + 1)
     .toString()
     .padStart(2, "0") as MonthValue;
-  let type: TypeValue = "ALL";
+  let selectedType: TypeValue = "ALL";
 
   const monthNameMap: Record<MonthValue, string> = {
     "00": "dezember-1",
@@ -57,27 +58,27 @@
 
     const urlYear = queryParams.get("jahr");
     if (urlYear && !isNaN(Number(urlYear))) {
-      year = Number(urlYear);
+      selectedYear = Number(urlYear);
     }
 
     const urlMonth = queryParams.get("monat");
     if (urlMonth && reverseMonthNameMap[urlMonth]) {
-      month = reverseMonthNameMap[urlMonth];
+      selectedMonth = reverseMonthNameMap[urlMonth];
     }
 
     const urlType = queryParams.get("netzzugangsthema");
     if (urlType && reverseTypeNameMap[urlType]) {
-      type = reverseTypeNameMap[urlType];
+      selectedType = reverseTypeNameMap[urlType];
     }
   });
 
   $: {
     // dynamically update URL query parameters
-    if (year && month && type) {
+    if (selectedYear && selectedMonth && selectedType) {
       const params = new URLSearchParams();
-      params.set("jahr", year.toString());
-      params.set("monat", monthNameMap[month]);
-      params.set("netzzugangsthema", typeNameMap[type]);
+      params.set("jahr", selectedYear.toString());
+      params.set("monat", monthNameMap[selectedMonth]);
+      params.set("netzzugangsthema", typeNameMap[selectedType]);
 
       goto(`${base}/fristenkalender/?${params.toString()}`, {
         replaceState: true,
@@ -87,7 +88,11 @@
 </script>
 
 <div class="mx-5 my-5">
-  <CalendarYearInput bind:selectedYear={year} />
-  <CalendarMonthSelect bind:selectedMonth={month} />
-  <CalendarTypeSelect bind:selectedType={type} />
+  <div class="flex flex-wrap gap-4 mb-6">
+    <CalendarYearInput bind:selectedYear />
+    <CalendarMonthSelect bind:selectedMonth />
+    <CalendarTypeSelect bind:selectedType />
+  </div>
+
+  <CalendarTable {selectedYear} {selectedMonth} {selectedType} />
 </div>
