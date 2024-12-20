@@ -10,4 +10,5 @@ export { default as IconSquareArrow } from "$lib/components/shared/icon-square-a
 
 // features
 export { default as CalendarMonthSelect } from "$lib/components/features/calendar-month-select.svelte";
+export { default as CalendarTypeSelect } from "$lib/components/features/calendar-type-select.svelte";
 export { default as CalendarYearInput } from "$lib/components/features/calendar-year-input.svelte";
