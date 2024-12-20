@@ -4,7 +4,6 @@
     .padStart(2, "0");
 
   const months = [
-    { value: "00", label: "Dezember -1" },
     { value: "01", label: "Januar" },
     { value: "02", label: "Februar" },
     { value: "03", label: "März" },
@@ -17,7 +16,6 @@
     { value: "10", label: "Oktober" },
     { value: "11", label: "November" },
     { value: "12", label: "Dezember" },
-    { value: "13", label: "Januar +1" },
   ];
 </script>
 
