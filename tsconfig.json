@@ -16,9 +16,7 @@
       "$lib": ["./src/lib"],
       "$lib/*": ["./src/lib/*"],
       "$src": ["./src"],
-      "$src/*": ["./src/*"],
-      "$app": ["./node_modules/@sveltejs/kit/types/$app"],
-      "$app/*": ["./node_modules/@sveltejs/kit/types/$app/*"]
+      "$src/*": ["./src/*"]
     },
     "types": ["vite/client", "node", "@sveltejs/kit"]
   },

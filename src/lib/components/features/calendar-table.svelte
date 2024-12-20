@@ -9,7 +9,6 @@
 
   let entries: CalendarEntry[] = [];
   let isLoading = false;
-  let error: string | null = null;
 
   async function fetchDataForYear(): Promise<string[]> {
     const apiUrl =
@@ -17,22 +16,18 @@
         ? `https://fristenkalender.azurewebsites.net/api/GenerateAllFristen/${selectedYear}`
         : `https://fristenkalender.azurewebsites.net/api/GenerateFristenForType/${selectedYear}/${selectedType}`;
 
-    // use CORS proxy as in `fristenkalender-frontend-legacy`
     const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`;
-    console.log("Making request via proxy:", proxyUrl);
 
     const response = await fetch(proxyUrl);
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error status: ${response.status}`);
     }
 
     const data = await response.json();
-    console.log("Received data:", data);
     return data;
   }
 
   function displayResults(data: string[]): void {
-    console.log("Processing data:", data);
     let yearSelected = selectedYear;
     let monthSelected = parseInt(selectedMonth);
 
@@ -70,8 +65,8 @@
           /datetime\.date\((?<year>\d+), (?<month>\d+), (?<day>\d+)\)/;
         const dateMatches = row.match(datePattern);
 
+        // skip rows containing unselected dates (azure function returns data for a whole year)
         if (!dateMatches?.groups || !labelMatch) {
-          console.log("Skipping row due to no match:", row);
           return null;
         }
 
@@ -80,12 +75,6 @@
         const day = parseInt(dateMatches.groups.day);
 
         if (monthInt !== monthSelected || year !== yearSelected) {
-          console.log("Skipping row due to month/year mismatch:", {
-            monthInt,
-            year,
-            monthSelected,
-            yearSelected,
-          });
           return null;
         }
 
@@ -112,21 +101,16 @@
         );
         return dateA.getTime() - dateB.getTime();
       });
-
-    console.log("Final entries:", entries);
   }
 
   async function loadData(): Promise<void> {
     isLoading = true;
-    error = null;
 
     try {
       const data = await fetchDataForYear();
       displayResults(data);
     } catch (e) {
       console.error("Error in loadData:", e);
-      error =
-        "Fehler beim Laden der Kalenderdaten. Bitte versuchen Sie es später erneut.";
       entries = [];
     } finally {
       isLoading = false;
@@ -141,15 +125,11 @@
 <div class="relative overflow-x-auto mt-4">
   {#if isLoading}
     <div class="flex justify-center items-center p-4">
-      <span class="text-gray-600">Lade Kalenderdaten...</span>
-    </div>
-  {:else if error}
-    <div class="text-red-600 p-4">
-      {error}
+      <span class="text-gray-600">Fristen werden geladen ...</span>
     </div>
   {:else if entries.length === 0}
     <div class="text-gray-600 p-4">
-      Keine Einträge für den ausgewählten Zeitraum gefunden.
+      Keine Fristen für den ausgewählten Zeitraum gefunden.
     </div>
   {:else}
     <table class="w-full text-left text-gray-800">
