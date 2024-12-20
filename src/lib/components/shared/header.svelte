@@ -7,10 +7,11 @@
     CalendarYearSelect,
     IconSymbol,
   } from "$lib/components";
+  import type { MonthValue } from "$lib/types/calendar-month";
 
   export let background = "bg-primary";
   export let selectedYear: number;
-  export let selectedMonth: string;
+  export let selectedMonth: MonthValue;
   export let selectedType: string;
 </script>
 
@@ -22,7 +23,7 @@
       </a>
     </div>
 
-    <span class="text-3xl"> Digitaler Fristenkalender </span>
+    <span class="text-3xl text-black/70"> Digitaler Fristenkalender </span>
 
     <div class="flex gap-4 ml-4 pb-1">
       <CalendarYearSelect bind:selectedYear />
