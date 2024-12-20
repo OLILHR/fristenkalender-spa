@@ -18,7 +18,6 @@
   let selectedType: TypeValue = "ALL";
 
   const monthNameMap: Record<MonthValue, string> = {
-    "00": "dezember-1",
     "01": "januar",
     "02": "februar",
     "03": "maerz",
@@ -31,7 +30,6 @@
     "10": "oktober",
     "11": "november",
     "12": "dezember",
-    "13": "januar+1",
   };
 
   const reverseMonthNameMap: Record<string, MonthValue> = Object.fromEntries(
@@ -88,7 +86,7 @@
   <Header bind:selectedYear bind:selectedMonth bind:selectedType />
   <div class="flex flex-col px-24 py-12">
     <h1 class="text-2xl font-medium text-black/70">
-      Fristenkalender {monthNameMap[selectedMonth].charAt(0).toUpperCase() +
+      {monthNameMap[selectedMonth].charAt(0).toUpperCase() +
         monthNameMap[selectedMonth].slice(1)}
       {selectedYear}
     </h1>
