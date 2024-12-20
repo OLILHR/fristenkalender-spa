@@ -6,7 +6,7 @@
   let currentYear = new Date().getFullYear();
 </script>
 
-<footer class="flex items-center {background} px-3 py-2">
+<footer class="flex items-center {background} px-3 pb-1">
   <div class="flex-none">
     <a href="https://hochfrequenz.de" title="landingpage">
       <IconLogo size={160} />

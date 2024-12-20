@@ -85,7 +85,7 @@
 
 <div class="flex flex-col h-full bg-tint">
   <Header bind:selectedYear bind:selectedMonth bind:selectedType />
-  <div class="flex-1 min-h-0">
+  <div class="flex-1 min-h-0 px-20 py-3">
     <CalendarTable {selectedYear} {selectedMonth} {selectedType} />
   </div>
 </div>

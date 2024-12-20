@@ -25,7 +25,7 @@
   let entries: CalendarEntry[] = [];
   let isLoading = false;
 
-  // split <number> and "WT"/"LWT"
+  // split <number> and <string> ("WT"/"LWT")
   function formatWorkday(workday: string): string {
     return workday.replace(/(\d+)([a-zA-Z]+)/g, "$1 $2");
   }
@@ -153,20 +153,20 @@
     <div class="overflow-auto flex-1 min-h-0">
       <table class="w-full text-left">
         <thead class="text-xs bg-tint uppercase sticky top-0 z-10">
-          <tr>
-            <th class="px-6 py-3">Datum</th>
-            <th class="px-6 py-3">Werktag</th>
-            <th class="px-6 py-3">Beschreibung</th>
+          <tr class="text-black/40 border-b-2 border-secondary">
+            <th class="py-3">Datum</th>
+            <th class="py-3">Werktag</th>
+            <th class="py-3">Beschreibung</th>
           </tr>
         </thead>
         <tbody>
           {#each entries as entry}
-            <tr class="border-b border-primary">
-              <td class="px-6 py-4 whitespace-nowrap">{entry.date}</td>
-              <td class="px-6 py-4 whitespace-nowrap"
+            <tr class="border-b border-secondary/40">
+              <td class="py-4 whitespace-nowrap">{entry.date}</td>
+              <td class="py-4 whitespace-nowrap"
                 >{formatWorkday(entry.workday)}</td
               >
-              <td class="px-6 py-4">{@html entry.description}</td>
+              <td class="py-4">{@html entry.description}</td>
             </tr>
           {/each}
         </tbody>
