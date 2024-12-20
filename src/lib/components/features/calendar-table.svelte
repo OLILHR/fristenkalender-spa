@@ -155,15 +155,15 @@
         <thead class="text-sm bg-tint uppercase sticky top-0 z-10">
           <tr class="text-black/50">
             <th
-              class="py-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
+              class="pb-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
               >Datum</th
             >
             <th
-              class="py-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
+              class="pb-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
               >Werktag</th
             >
             <th
-              class="py-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
+              class="pb-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
               >Beschreibung</th
             >
           </tr>

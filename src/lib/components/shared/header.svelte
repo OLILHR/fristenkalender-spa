@@ -4,7 +4,7 @@
     AuthButton,
     CalendarMonthSelect,
     CalendarTypeSelect,
-    CalendarYearInput,
+    CalendarYearSelect,
     IconSymbol,
   } from "$lib/components";
 
@@ -23,7 +23,7 @@
     </div>
 
     <div class="flex gap-4 ml-4">
-      <CalendarYearInput bind:selectedYear />
+      <CalendarYearSelect bind:selectedYear />
       <CalendarMonthSelect bind:selectedMonth />
       <CalendarTypeSelect bind:selectedType />
     </div>
