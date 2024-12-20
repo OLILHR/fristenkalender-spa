@@ -1,18 +1,14 @@
 <script>
-  import { base } from "$app/paths";
-  import { IconHeart, IconLogo } from "$lib/components";
+  import { IconHeart } from "$lib/components";
 
-  export let background = "bg-secondary";
+  export let background = "bg-tint";
 
   let currentYear = new Date().getFullYear();
 </script>
 
-<footer class="flex justify-between items-center {background} px-6 py-2.5">
-  <a href="{base}/" title="landingpage" class="flex-none items-center">
-    <IconLogo size={24} />
-  </a>
-  <div class="flex items-center text-sm text-white space-x-1">
-    <p class="flex items-center flex-wrap">
+<footer class="flex flex-col items-center {background} px-6 py-2.5">
+  <div class="flex items-center text-sm text-black space-x-1 text-center">
+    <p class="flex items-center flex-wrap justify-center">
       © {currentYear} - made with
       <IconHeart />
       by
