@@ -25,6 +25,11 @@
   let entries: CalendarEntry[] = [];
   let isLoading = false;
 
+  // split <number> and "WT"/"LWT"
+  function formatWorkday(workday: string): string {
+    return workday.replace(/(\d+)([a-zA-Z]+)/g, "$1 $2");
+  }
+
   async function fetchData(): Promise<CacheData> {
     const cacheKey = `${selectedYear}-${selectedType}`;
 
@@ -146,8 +151,8 @@
     <span> Keine Fristen für den ausgewählten Zeitraum gefunden. </span>
   {:else}
     <div class="overflow-auto flex-1 min-h-0">
-      <table class="w-full text-left text-gray-800">
-        <thead class="text-xs uppercase sticky top-0 z-10">
+      <table class="w-full text-left">
+        <thead class="text-xs bg-tint uppercase sticky top-0 z-10">
           <tr>
             <th class="px-6 py-3">Datum</th>
             <th class="px-6 py-3">Werktag</th>
@@ -156,9 +161,11 @@
         </thead>
         <tbody>
           {#each entries as entry}
-            <tr class="border-b">
+            <tr class="border-b border-primary">
               <td class="px-6 py-4 whitespace-nowrap">{entry.date}</td>
-              <td class="px-6 py-4 whitespace-nowrap">{entry.workday}</td>
+              <td class="px-6 py-4 whitespace-nowrap"
+                >{formatWorkday(entry.workday)}</td
+              >
               <td class="px-6 py-4">{@html entry.description}</td>
             </tr>
           {/each}

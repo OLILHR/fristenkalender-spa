@@ -1,5 +1,4 @@
 <script>
-  import { base } from "$app/paths";
   import { IconHeart, IconLogo } from "$lib/components";
 
   export let background = "bg-tint";
@@ -9,7 +8,7 @@
 
 <footer class="flex items-center {background} px-3 py-2">
   <div class="flex-none">
-    <a href="{base}/" title="landingpage">
+    <a href="https://hochfrequenz.de" title="landingpage">
       <IconLogo size={160} />
     </a>
   </div>
@@ -21,7 +20,7 @@
         <IconHeart />
         by
         <a
-          class="font-bold ml-1 mr-2"
+          class="ml-1 mr-2"
           target="_blank"
           rel="noopener noreferrer"
           href="https://hochfrequenz.de">Hochfrequenz</a
