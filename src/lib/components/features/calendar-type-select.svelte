@@ -2,7 +2,7 @@
   export let selectedType: string = "ALL";
 
   const types = [
-    { value: "ALL", label: "Alle" },
+    { value: "ALL", label: "alle" },
     { value: "GELI", label: "GeLi Gas" },
     { value: "GPKE", label: "GPKE" },
     { value: "KOV", label: "KoV" },

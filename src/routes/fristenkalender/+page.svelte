@@ -8,6 +8,7 @@
   import CalendarTable from "$lib/components/features/calendar-table.svelte";
   import type { MonthValue } from "$lib/types/calendar-month";
   import type { TypeValue } from "$lib/types/calendar-type";
+  import { typeNames } from "$lib/types/calendar-type";
 
   // default placeholders on inital page access (current year/month + "alle Netzzugangsthemen")
   let selectedYear = new Date().getFullYear();
@@ -85,7 +86,18 @@
 
 <div class="flex flex-col h-full bg-tint">
   <Header bind:selectedYear bind:selectedMonth bind:selectedType />
-  <div class="flex-1 min-h-0 px-20 py-3">
+  <div class="flex flex-col px-20 pt-6 pb-3">
+    <h1 class="text-2xl font-medium">
+      Fristenkalender {monthNameMap[selectedMonth].charAt(0).toUpperCase() +
+        monthNameMap[selectedMonth].slice(1)}
+      {selectedYear}
+    </h1>
+    <h2 class="text-xl text-black/60">
+      Netzzugangsthema: {typeNames.find((t) => t.value === selectedType)
+        ?.label || "alle"}
+    </h2>
+  </div>
+  <div class="flex-1 min-h-0 px-20 pb-1">
     <CalendarTable {selectedYear} {selectedMonth} {selectedType} />
   </div>
 </div>

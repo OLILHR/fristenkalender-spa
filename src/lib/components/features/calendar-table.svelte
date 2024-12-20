@@ -152,16 +152,16 @@
   {:else}
     <div class="overflow-auto flex-1 min-h-0">
       <table class="w-full text-left">
-        <thead class="text-xs bg-tint uppercase sticky top-0 z-10">
-          <tr class="text-black/40 border-b-2 border-secondary">
-            <th class="py-3">Datum</th>
-            <th class="py-3">Werktag</th>
-            <th class="py-3">Beschreibung</th>
+        <thead class="text-sm bg-tint uppercase sticky top-0 z-10">
+          <tr class="text-black/50 border-b-2 border-secondary">
+            <th class="py-3 font-normal">Datum</th>
+            <th class="py-3 font-normal">Werktag</th>
+            <th class="py-3 font-normal">Beschreibung</th>
           </tr>
         </thead>
         <tbody>
           {#each entries as entry}
-            <tr class="border-b border-secondary/40">
+            <tr class="font-medium border-b border-secondary/40">
               <td class="py-4 whitespace-nowrap">{entry.date}</td>
               <td class="py-4 whitespace-nowrap"
                 >{formatWorkday(entry.workday)}</td
