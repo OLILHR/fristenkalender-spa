@@ -7,3 +7,8 @@ export { default as IconLogin } from "$lib/components/shared/icon-login.svelte";
 export { default as IconLogo } from "$lib/components/shared/icon-logo.svelte";
 export { default as IconLogout } from "$lib/components/shared/icon-logout.svelte";
 export { default as IconSquareArrow } from "$lib/components/shared/icon-square-arrow.svelte";
+
+// features
+export { default as CalendarMonthSelect } from "$lib/components/features/calendar-month-select.svelte";
+export { default as CalendarTypeSelect } from "$lib/components/features/calendar-type-select.svelte";
+export { default as CalendarYearInput } from "$lib/components/features/calendar-year-input.svelte";

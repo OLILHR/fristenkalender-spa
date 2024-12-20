@@ -52,4 +52,4 @@ Azure: TBD
 
 [fristenkalender-generator](https://github.com/Hochfrequenz/fristenkalender_generator)<br>
 [fristenkalender-functions](https://github.com/Hochfrequenz/fristenkalender-functions)<br>
-[fristenkalender-frontend (legacy)](https://github.com/Hochfrequenz/fristenkalender-frontend)<br>
+[fristenkalender-frontend-legacy](https://github.com/Hochfrequenz/fristenkalender-frontend-legacy)<br>
