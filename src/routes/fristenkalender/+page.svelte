@@ -86,7 +86,7 @@
 
 <div class="flex flex-col h-full bg-tint">
   <Header bind:selectedYear bind:selectedMonth bind:selectedType />
-  <div class="flex flex-col px-20 pt-6 pb-3">
+  <div class="flex flex-col px-20 py-10">
     <h1 class="text-2xl font-medium">
       Fristenkalender {monthNameMap[selectedMonth].charAt(0).toUpperCase() +
         monthNameMap[selectedMonth].slice(1)}

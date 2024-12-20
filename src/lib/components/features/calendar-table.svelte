@@ -153,10 +153,19 @@
     <div class="overflow-auto flex-1 min-h-0">
       <table class="w-full text-left">
         <thead class="text-sm bg-tint uppercase sticky top-0 z-10">
-          <tr class="text-black/50 border-b-2 border-secondary">
-            <th class="py-3 font-normal">Datum</th>
-            <th class="py-3 font-normal">Werktag</th>
-            <th class="py-3 font-normal">Beschreibung</th>
+          <tr class="text-black/50">
+            <th
+              class="py-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
+              >Datum</th
+            >
+            <th
+              class="py-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
+              >Werktag</th
+            >
+            <th
+              class="py-4 font-normal relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-secondary"
+              >Beschreibung</th
+            >
           </tr>
         </thead>
         <tbody>
