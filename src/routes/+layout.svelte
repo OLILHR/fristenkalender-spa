@@ -43,8 +43,8 @@
     <p>Loading...</p>
   </div>
 {:else}
-  <div class="flex flex-col h-screen">
-    <main class="flex-grow flex flex-col overflow-hidden">
+  <div class="flex flex-col h-screen overflow-hidden">
+    <main class="flex-grow flex flex-col min-h-0">
       <slot />
     </main>
     <Footer />
@@ -55,5 +55,6 @@
   :global(body) {
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
 </style>
