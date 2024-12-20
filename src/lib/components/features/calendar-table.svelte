@@ -147,7 +147,7 @@
   {:else}
     <div class="overflow-auto flex-1 min-h-0">
       <table class="w-full text-left text-gray-800">
-        <thead class="bg-gray-50 text-xs uppercase sticky top-0 z-10">
+        <thead class="text-xs uppercase sticky top-0 z-10">
           <tr>
             <th class="px-6 py-3">Datum</th>
             <th class="px-6 py-3">Werktag</th>
@@ -156,7 +156,7 @@
         </thead>
         <tbody>
           {#each entries as entry}
-            <tr class="bg-white border-b">
+            <tr class="border-b">
               <td class="px-6 py-4 whitespace-nowrap">{entry.date}</td>
               <td class="px-6 py-4 whitespace-nowrap">{entry.workday}</td>
               <td class="px-6 py-4">{@html entry.description}</td>

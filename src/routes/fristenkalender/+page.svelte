@@ -4,11 +4,7 @@
   import { goto } from "$app/navigation";
   import { base } from "$app/paths";
   import { page } from "$app/stores";
-  import {
-    CalendarMonthSelect,
-    CalendarTypeSelect,
-    CalendarYearInput,
-  } from "$lib/components";
+  import { Header } from "$lib/components";
   import CalendarTable from "$lib/components/features/calendar-table.svelte";
   import type { MonthValue } from "$lib/types/calendar-month";
   import type { TypeValue } from "$lib/types/calendar-type";
@@ -87,16 +83,9 @@
   }
 </script>
 
-<div class="flex flex-col h-full">
-  <div class="flex-none p-5">
-    <div class="flex flex-wrap gap-4">
-      <CalendarYearInput bind:selectedYear />
-      <CalendarMonthSelect bind:selectedMonth />
-      <CalendarTypeSelect bind:selectedType />
-    </div>
-  </div>
-
-  <div class="flex-1 min-h-0 px-5 pb-5">
+<div class="flex flex-col h-full bg-tint">
+  <Header bind:selectedYear bind:selectedMonth bind:selectedType />
+  <div class="flex-1 min-h-0">
     <CalendarTable {selectedYear} {selectedMonth} {selectedType} />
   </div>
 </div>

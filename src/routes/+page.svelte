@@ -43,7 +43,7 @@
     after:shadow-[inset_0_-2px_4px_rgba(0,0,0,0.1)]
     after:pointer-events-none"
   >
-    <h1 class="text-4xl text-center pb-5">Digitaler Fristenkalender</h1>
+    <h1 class="text-3xl text-center pb-5">Digitaler Fristenkalender</h1>
     <h2
       class="flex justify-center text-lg border-b border-secondary pb-3 mb-5 uppercase"
     >

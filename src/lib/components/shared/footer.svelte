@@ -27,17 +27,18 @@
           href="https://hochfrequenz.de">Hochfrequenz</a
         >
         |
-        <span class="ml-2">unseren Fristenkalender</span>
         <a
-          class="font-bold underline mx-1"
+          class="font-bold underline ml-2"
           target="_blank"
           rel="noopener
         noreferrer"
           href="https://www.hochfrequenz.de/#fristenkalender"
         >
-          hier</a
+          hier klicken</a
         >
-        <span class="mr-2">als PDF anfordern</span>
+        <span class="mr-2"
+          >, um unseren aktuellsten Fristenkalender als PDF anzufordern</span
+        >
         |
         <a
           class="mx-2"
